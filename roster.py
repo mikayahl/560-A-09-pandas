@@ -1,4 +1,6 @@
-https://goheels.com/sports/mens-basketball/roster
+# https://goheels.com/sports/mens-basketball/roster
+import pandas as pd
 
 roster = ["Bacot", "Davis", "Cadeau"]
-print(roster)
+data = pd.DataFrame(roster)
+print(data)
