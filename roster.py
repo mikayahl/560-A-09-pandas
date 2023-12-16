@@ -10,7 +10,9 @@ player = {"Last Name": ["High", "Cadeau", "Ryan", "Davis", "Bacot", "Trimble", "
 data = pd.DataFrame(player)
 
 # bmi = weight in kg/ height in meters squared
-data["bmi"] = (data["weight"])/2.205/((data["height"]/39.37)**2)
+data["bmi"] = [(weight / 2.205) / ((height / 39.37) ** 2) 
+    for weight, height in zip(data["weight"], data["height"])]
+data["bmi"] = [f'{bmi:.2f}' for bmi in data["bmi"]]
 
 print(data)
 
